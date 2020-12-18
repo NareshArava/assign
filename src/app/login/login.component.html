@@ -1,0 +1,16 @@
+<form [formGroup]="loginForm" (ngSubmit)="signIn()">
+    <div>
+        <label for="username">Username</label>
+        <input type="text" placeholder="Enter user name" fromControlName="username">
+        <!--<small *ngIf="username.invalid && (username.dirty || username.touched">
+            Username is a manadatory
+        </small>-->
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="text" placeholder="Enter password" formControlName="password">
+    </div>
+    <div>
+        <button value="Sign In">Sign In</button>
+    </div>
+</form>

@@ -1,0 +1,49 @@
+<app-header>
+
+</app-header>
+<!-- Note Input panel -->
+<app-login></app-login>
+
+<mat-expansion-panel hideToggle class="noteInputContainer">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+          Note
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+    <div class="noteInputs">
+<!-- title -->
+
+<mat-form-field>
+  <input [(ngModel)] = "note.title" matInput placeholder="Enter Note Title">
+</mat-form-field>
+
+
+
+<!-- text -->
+<mat-form-field>
+  <textarea [(ngModel)] = "note.text" matInput placeholder="Enter Note Text"></textarea>
+</mat-form-field>
+    </div>
+
+    <div class="noteSubmit">
+<!-- button -->
+<button mat-button (click)="takeNote()" color="primary">Done</button>
+    </div>
+
+</mat-expansion-panel>
+
+
+
+<!-- Notes Reader Panel -->
+
+
+<mat-card class="noteCard" *ngFor="let mynote of notes">
+  <mat-card-title>
+    {{mynote.title}}
+  </mat-card-title>
+  <mat-card-Content>
+    {{mynote.text}}
+  </mat-card-Content>
+   
+
+</mat-card>
